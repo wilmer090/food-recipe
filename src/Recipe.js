@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, CssBaseline, Grid, Container, Card, CardMedia, CardContent, Toolbar } from '@material-ui/core'
+import { Typography, CssBaseline, Grid, Card, CardMedia, CardContent, Toolbar } from '@material-ui/core'
 import RestaurantOutlinedIcon from '@material-ui/icons/RestaurantOutlined';
 import {BrowserRouter as Router,Link as RouterLink} from "react-router-dom";
 import Link from '@material-ui/core/Link'
@@ -18,7 +18,7 @@ function Recipe({title, cuisine, thumbnail, url}){
               <CardMedia image={thumbnail} className={classes.cardMedia}/>
               <CardContent className={classes.cardContent}>
                 <Typography variant="body2" className={classes.cardSubtitle} gutterBottom>Recipe</Typography>
-                <Typography variant="h5" align="center" className={classes.letterSpacing}>{(title.length > 10) ? title = `${title.substring(0,10)}...` : title }</Typography>
+                <Typography variant="h6" align="center" className={classes.letterSpacing}>{(title.length > 15) ? title = `${title.substring(0,10)}...` : title }</Typography>
                 <Toolbar>
                 <Typography variant="body2" className={classes.icon}>cuisine: {cuisine? cuisine : 'Filipino' }</Typography>
                 <RestaurantOutlinedIcon />
