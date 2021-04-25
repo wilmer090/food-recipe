@@ -7,6 +7,7 @@ import SearchIcon from '@material-ui/icons/Search'
 import useStyles from './style'
 import Recipe from './Recipe'
 import Cards from './components/Cards'
+import Footer from './components/Footer'
 
 const App = () =>{
   
@@ -18,6 +19,7 @@ const [searchParams, setSearchParams] = useState("chicken")
      <div className="App">
       <Nav setRecipeData={setRecipeData} setSearchParams={setSearchParams}/> 
       <Cards recipes={recipeData} searchParams={searchParams} />
+      <Footer />
      </div>
      
     </>

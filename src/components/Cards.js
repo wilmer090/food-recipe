@@ -14,7 +14,7 @@ const Cards = ({ recipes, searchParams }) =>{
         <Typography variant="h4" align="center" gutterBottom className={classes.mainTitle}>{`Food recipe for ${searchParams}`}</Typography>
         </Container>
         <Container maxWidth="md">
-        <Grid container spacing={2}>
+        <Grid container spacing={2} gutterBottom>
           {recipes.map( (recipe, index) => { return(<Recipe 
             key={recipe.recipe.label} 
             title={recipe.recipe.label} 
