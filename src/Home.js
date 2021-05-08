@@ -1,40 +1,23 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import {useForm} from 'react-hook-form'
 import {Typography, AppBar, Toolbar, Container, CssBaseline, TextField, OutlinedInput, Grid, InputBase, IconButton } from '@material-ui/core'
 import FastfoodIcon from '@material-ui/icons/Fastfood';
 import SearchIcon from '@material-ui/icons/Search'
 import useStyles from './style'
 import Recipe from './Recipe'
+import {contextApi} from './ContextApi'
 
 const Home = () =>{
-  
-  const classes = useStyles()
-
-  const APP_ID = '84cf712e'
-  const APP_KEY = 'acb5b8b842f3e8caba7dde4fb350a64d'
-
-  const {register, handleSubmit} = useForm()
-  const [recipes, setRecipes] = useState([])
-  const [query, setQuery] = useState('çhicken')
-
-  const getRecipe = async() =>{
-    const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`)
-    const data = await response.json()
-    setRecipes(data.hits)
-  }
-  useEffect(() =>{
+  const {recipes,query, getRecipe} = useContext(contextApi)
+    
+  useEffect(()=>{
     getRecipe()
-  }, [query])
+  },[query])
 
-  const getSearch = (data, e) =>{
-    e.preventDefault()
-    setQuery(data.text)
-    e.target.reset()
-  }
-  console.log(recipes)
+console.log(recipes)
   return (
     <>
-    <CssBaseline/>
+    {/* <CssBaseline/>
      <div className="App">
      <AppBar position="static" className={classes.bgColorBlack}>
         <Toolbar>
@@ -76,7 +59,7 @@ const Home = () =>{
          </Container>
 
       </main>
-     </div>
+     </div> */}
      
     </>
   ) 
