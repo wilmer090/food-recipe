@@ -8,13 +8,14 @@ import Recipe from './Recipe'
 import {contextApi} from './ContextApi'
 
 const Home = () =>{
-  const {recipes,query, getRecipe} = useContext(contextApi)
-    
+  const {recipes, getRecipe} = useContext(contextApi)
+  
   useEffect(()=>{
     getRecipe()
-  },[query])
+}, [])
 
-console.log(recipes)
+  recipes.map(recipe => console.log(recipe))
+
   return (
     <>
     {/* <CssBaseline/>
