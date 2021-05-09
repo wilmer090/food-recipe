@@ -24,7 +24,7 @@ const api_props = {
   }
     
     return (
-        <contextApi.Provider value={{recipes, getRecipe}}>
+        <contextApi.Provider value={{recipes, query, getRecipe, setQuery}}>
             {props.children}
         </contextApi.Provider>
     )

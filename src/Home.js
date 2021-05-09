@@ -8,13 +8,13 @@ import Recipe from './Recipe'
 import {contextApi} from './ContextApi'
 
 const Home = () =>{
-  const {recipes, getRecipe} = useContext(contextApi)
-  
+
+  const {recipes, query, getRecipe} = useContext(contextApi)
+  const classes = useStyles()
+
   useEffect(()=>{
     getRecipe()
-}, [])
-
-  recipes.map(recipe => console.log(recipe))
+}, [query])
 
   return (
     <>
@@ -22,7 +22,7 @@ const Home = () =>{
      <div className="App">
        <main>
         <Container maxWidth="sm">
-        {/* <Typography variant="h4" align="center" gutterBottom className={classes.mainTitle}>{`Food recipe for ${query}`}</Typography> */}
+        <Typography variant="h4" align="center" gutterBottom className={classes.mainTitle}>{`Food recipe for ${query}`}</Typography>
         </Container>
         <Container maxWidth="md">
         <Grid container spacing={2}>
