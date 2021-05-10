@@ -1,5 +1,4 @@
-import React,{useState,useEffect, createContext} from 'react'
-import { set } from 'react-hook-form'
+import React,{useState, createContext} from 'react'
 
 
 export const contextApi = createContext()
@@ -18,6 +17,7 @@ const api_props = {
 
   const getRecipe = async() =>{
     const response = await fetch(`https://api.edamam.com/search?q=${api_props.APP_QUERY}&app_id=${api_props.APP_ID}&app_key=${api_props.APP_KEY}`)
+    
     const data = await response.json()
     
     setRecipes(data.hits)

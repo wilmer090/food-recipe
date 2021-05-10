@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react'
+import React, {useContext} from 'react'
 import {useForm} from 'react-hook-form'
 import {Typography, AppBar, Toolbar, InputBase} from '@material-ui/core'
 import FastfoodIcon from '@material-ui/icons/Fastfood';
