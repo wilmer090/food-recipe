@@ -1,8 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react'
-import {useForm} from 'react-hook-form'
-import {Typography,Container, CssBaseline, Grid, InputBase, IconButton } from '@material-ui/core'
-import FastfoodIcon from '@material-ui/icons/Fastfood';
-import SearchIcon from '@material-ui/icons/Search'
+import {Typography,Container, CssBaseline, Grid} from '@material-ui/core'
 import useStyles from './style'
 import Recipe from './Recipe'
 import {contextApi} from './ContextApi'
